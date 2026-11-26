@@ -4,15 +4,15 @@ EasyPath Manipulator is a desktop tool for manually aligning serial whole-slide 
 
 ## Download the General edition
 
-Open [Releases](https://github.com/whs2009/EasyPath-Manipulator/releases) and select the file for your computer. A release is published only after all five native package checks pass. Compare the SHA-256 of your download with the release's `SHA256SUMS`.
+Download the **0.3.1 General edition** for your platform below. Compare the SHA-256 of your download with [SHA256SUMS](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/SHA256SUMS). See [Releases](https://github.com/whs2009/EasyPath-Manipulator/releases) for other versions.
 
-| System | Package suffix |
+| Platform | Release asset |
 | --- | --- |
-| Windows x86-64 | `windows-x64.exe` |
-| Ubuntu x86-64 | `ubuntu-x64.AppImage` |
-| Ubuntu ARM64 | `ubuntu-arm64.AppImage` |
-| macOS Apple silicon | `macos-arm64.dmg` |
-| macOS Intel | `macos-x64.dmg` |
+| Windows x86-64 | [EasyPath-Slide-Manipulator-windows-x64.exe](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-windows-x64.exe) |
+| macOS Apple silicon | [EasyPath-Slide-Manipulator-macos-arm64.dmg](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-macos-arm64.dmg) |
+| macOS Intel | [EasyPath-Slide-Manipulator-macos-x64.dmg](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-macos-x64.dmg) |
+| Ubuntu x86-64 | [EasyPath-Slide-Manipulator-ubuntu-x64.AppImage](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-ubuntu-x64.AppImage) |
+| Ubuntu ARM64 | [EasyPath-Slide-Manipulator-ubuntu-arm64.AppImage](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-ubuntu-arm64.AppImage) |
 
 Open the executable on Windows, make the AppImage executable on Ubuntu, or open the DMG and copy the app to Applications on macOS. Follow your institution's software installation policy.
 
