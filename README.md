@@ -4,7 +4,7 @@ EasyPath Manipulator is a desktop tool for manually aligning serial whole-slide 
 
 ## Download the General edition
 
-Download the **0.3.1 General edition** for your platform below. Compare the SHA-256 of your download with [SHA256SUMS](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/SHA256SUMS). See [Releases](https://github.com/whs2009/EasyPath-Manipulator/releases) for other versions.
+Download the **0.3.1 General edition** for your platform below. For Windows, macOS and Ubuntu, compare the SHA-256 of your download with [SHA256SUMS](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/SHA256SUMS). See [Releases](https://github.com/whs2009/EasyPath-Manipulator/releases) for other versions.
 
 | Platform | Release asset |
 | --- | --- |
@@ -13,8 +13,11 @@ Download the **0.3.1 General edition** for your platform below. Compare the SHA-
 | macOS Intel | [EasyPath-Slide-Manipulator-macos-x64.dmg](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-macos-x64.dmg) |
 | Ubuntu x86-64 | [EasyPath-Slide-Manipulator-ubuntu-x64.AppImage](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-ubuntu-x64.AppImage) |
 | Ubuntu ARM64 | [EasyPath-Slide-Manipulator-ubuntu-arm64.AppImage](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-ubuntu-arm64.AppImage) |
+| CentOS Stream 9 x86-64 | [EasyPath-Slide-Manipulator-centos-stream9-x64.AppImage](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-centos-stream9-x64.AppImage) ([SHA-256](https://github.com/whs2009/EasyPath-Manipulator/releases/download/v0.3.1-general.1/EasyPath-Slide-Manipulator-centos-stream9-x64.AppImage.sha256)) |
 
-Open the executable on Windows, make the AppImage executable on Ubuntu, or open the DMG and copy the app to Applications on macOS. Follow your institution's software installation policy.
+The CentOS AppImage passed its [native CentOS Stream 9 build and tests](https://github.com/whs2009/EasyPath-Manipulator/actions/runs/45814440968). To verify it, download the SHA-256 file in its row and run `sha256sum -c EasyPath-Slide-Manipulator-centos-stream9-x64.AppImage.sha256` in the download directory.
+
+Open the executable on Windows, make the AppImage executable on Ubuntu or CentOS, or open the DMG and copy the app to Applications on macOS. Follow your institution's software installation policy.
 
 ## Worked example: align H&E with IHC
 
