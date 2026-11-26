@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+/easypath/
+/tools/slide_manipulator/engine.py
+/build*/
+/dist/
+/verified/

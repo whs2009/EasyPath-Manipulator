@@ -1,0 +1,1 @@
+The General package bundles FLTK, Python, OpenSlide, GEOS/Shapely and the codec and imaging dependencies listed in the build requirements. See the licenses directory inside the package and the upstream Viewer and Converter notices.
