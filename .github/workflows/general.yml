@@ -45,8 +45,10 @@ jobs:
           path: verified/
           if-no-files-found: error
           compression-level: 0
+  centos:
+    uses: ./.github/workflows/centos.yml
   release:
-    needs: native
+    needs: [native, centos]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     permissions:
@@ -55,7 +57,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Publish exactly five verified packages and their SHA-256 sums
+      - name: Publish six verified packages and their SHA-256 sums
         shell: bash
         run: |
           set -euo pipefail
@@ -64,8 +66,8 @@ jobs:
           mkdir downloads
           cd downloads
           files=()
-          for target in windows-x64 ubuntu-x64 ubuntu-arm64 macos-x64 macos-arm64; do
-            case "$target" in windows-*) ext=exe;; ubuntu-*) ext=AppImage;; macos-*) ext=dmg;; esac
+          for target in windows-x64 ubuntu-x64 ubuntu-arm64 macos-x64 macos-arm64 centos-stream9-x64; do
+            case "$target" in windows-*) ext=exe;; ubuntu-*|centos-*) ext=AppImage;; macos-*) ext=dmg;; esac
             file="EasyPath-Slide-Manipulator-$target.$ext"
             gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "general-$target" --dir "$target"
             test "$(find "$target" -mindepth 1 | wc -l)" -eq 1
@@ -74,4 +76,6 @@ jobs:
             files+=("$file")
           done
           sha256sum "${files[@]}" > SHA256SUMS
-          gh release create "$TAG" --target "$GITHUB_SHA" --repo "$GITHUB_REPOSITORY" --title "Manipulator $TAG (General)" --notes 'Five native General-edition packages tested from this revision. Verify your download against SHA256SUMS. No proprietary scanner SDKs are included.' "${files[@]}" SHA256SUMS
+          centos_file="EasyPath-Slide-Manipulator-centos-stream9-x64.AppImage"
+          sha256sum "$centos_file" > "$centos_file.sha256"
+          gh release create "$TAG" --target "$GITHUB_SHA" --repo "$GITHUB_REPOSITORY" --title "Manipulator $TAG (General)" --notes 'Six native General-edition packages tested from this revision. Verify your download against SHA256SUMS. No proprietary scanner SDKs are included.' "${files[@]}" SHA256SUMS "$centos_file.sha256"

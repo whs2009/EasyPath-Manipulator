@@ -7,7 +7,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 PINS = {
     "EasyPath-Viewer": "ad5097c7faa171793cfe995723eaff00d85a10b1",
-    "EasyPath-Converter": "26b919a41ffdfc5a07b521ee0697340ec040cca9",
+    "EasyPath-Converter": "2f5569e6a8f2651c861e914dec68796169166849",
 }
 
 def git(repo, *args):

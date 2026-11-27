@@ -30,6 +30,15 @@ def run(exe=None):
             res=subprocess.run([str(exe),*map(str,args)],cwd=root,env=env,capture_output=True,timeout=200)
             assert (res.returncode==0)==ok,(args[0],res.returncode,res.stderr[-2000:])
         if exe:
+            single = project.model_copy(deep=True)
+            single.frames = single.frames[:1]
+            one = root/'one.epmap'; save(single,one)
+            dest = root/'one.ep'; req = root/'one.json'
+            req.write_text(json.dumps(dict(target=str(dest),bits=8,loss=0,distance=4,srgb=True)))
+            cmd(['--check-project',one,req])
+            with NativeTransformSource.open(dest,assume_srgb=True) as r:
+                np.testing.assert_array_equal(r.read_plane(0,0,0,347,223),reference)
+            cmd(['--check-project',one,req],False)
             cmd(['--gui-smoke'])
             from check_output_layout import detailed,output_case
             detailed(root);cmd(['--check-detail',root/'detail.svs']);output_case(root,scan,stack,inverted,cmd)
